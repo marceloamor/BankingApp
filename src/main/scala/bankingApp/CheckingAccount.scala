@@ -1,5 +1,9 @@
 package bankingApp
 
-class CheckingAccount {
+import scala.io.StdIn.readInt
 
-}
+
+// Child class of class Account()
+/*class CheckingAccount extends Account {
+
+}*/
