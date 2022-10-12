@@ -6,7 +6,9 @@ import scala.io.StdIn.{readInt, readLine}
 class Bank {
 
   var listOfCustomer = new ListBuffer[Customer]()
-  var listOfPostCodes = new ListBuffer[String]()
+  var listOfUniqueIDs = new ListBuffer[String]()
+  //var mapOfAccounts = Map[Int, Account]
+
 
   def createCustomer(): Unit = {
     println("What is your first name?")
@@ -16,9 +18,10 @@ class Bank {
     println("What is your postcode? No spaces")
     val postCode = readLine
     var newCustomer = new Customer(firstName, lastName, postCode)
-    //newCustomer.getDetails()
+    val uniqueID = postCode + newCustomer.sortCode
+    println("Below are your details. Please write them down\n" + newCustomer.getDetails)
     listOfCustomer += newCustomer
-    listOfPostCodes += postCode
+    listOfUniqueIDs += uniqueID
     //println(listOfCustomer)
   }
 
@@ -30,7 +33,7 @@ class Bank {
 
   def logIn(postCode: String): Boolean = {
     var validUser: Boolean = false
-    for (a <- listOfPostCodes){
+    for (a <- listOfUniqueIDs){
       if (a == postCode){
         validUser = true
       }

@@ -4,8 +4,9 @@
 // Scala program for Banking System
 import bankingApp.{Account, Bank}
 
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.{ListBuffer, Map}
 import scala.io.StdIn.{readInt, readLine}
+import scala.util.control.Breaks.break
 
 object BankingApp {
   def main(args: Array[String]): Unit = {
@@ -26,7 +27,7 @@ object BankingApp {
           case 1 => bank.createCustomer() //create a customer
           case 2 => logInPage()
           case 3 => bank.getCustomers()
-          case 10 => //exit
+          case 10 => break
         }
       }
     }
@@ -35,8 +36,12 @@ object BankingApp {
     def logInPage(): Unit = {
       println("What is your post code?")
       val postCode = readLine
-      if (bank.logIn(postCode)){
-        var userIndex = bank.listOfPostCodes.indexOf(postCode)
+      println("What is your sort code? ")
+      val sortCode = readLine
+      val uniqueID = postCode+sortCode
+      if (bank.logIn(uniqueID)){
+        println("Log-in Successful")
+        var userIndex = bank.listOfUniqueIDs.indexOf(uniqueID)
         userPage(userIndex)
       }else{
         println("Incorrect Login")
@@ -44,9 +49,9 @@ object BankingApp {
     }
 
     def userPage(userIndex: Int): Unit = {
-      var user = bank.listOfCustomer(userIndex)
+      val user = bank.listOfCustomer(userIndex)
       while (option != "10") {
-        println("What would you like to do?\n" +
+        println("Hello " + user.getFullName + "! What would you like to do?\n" +
           "1- See details\n" +
           "2- Create account\n" +
           "3- See accounts\n" +
@@ -56,14 +61,21 @@ object BankingApp {
         var option = readInt()
         option match {
           case 1 => user.getDetails()
-          case 2 => //user.createAccount()
+          case 2 => //createAccount()
           case 3 => //user.createAccount()
           case 4 => println("All staff busy at the moment, try again later")
           case 10 => start()
 
+
+
         }
       }
     }
+
+
+
+
+
   }
 }
 

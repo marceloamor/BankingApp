@@ -5,7 +5,7 @@ import scala.io.StdIn.readInt
 import scala.io.StdIn.{readInt, readLine, readDouble}
 import scala.util.Random
 
-class Account(firstName: String, lastName: String, sortCode: Int){
+class Account(userIndex: Int){
 
   var balance: Double = 1000
   private val accountNumber: Int = Random.between(10000000,99999999)
@@ -14,11 +14,11 @@ class Account(firstName: String, lastName: String, sortCode: Int){
     println(s"Your current balance is: £$balance")
   }
 
-  def getDetails(): Unit = {
+  /*def getAccountDetails(): Unit = {
     println("Full Name: " + firstName + " " + lastName +"\n"+
-            s"Sort Code: ${sortCode}\n" +
+            s"UserID: ${sortCode}\n" +
             s"Account Number: $accountNumber")
-  }
+  }*/
 
   // withdraw money function
   def withdrawMoney(): Unit = {

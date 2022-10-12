@@ -5,23 +5,28 @@ import scala.io.StdIn.readLine
 import scala.util.Random
 
 
-class Customer(firstName: String, lastName: String, postCode: String) {
+class Customer(firstName: String, lastName: String, postCode: String) extends Bank{
 
   val sortCode: Int = Random.between(100000,999999)
   //var listOfAccount: Array[Account] = new Array[Account](2)
   var listOfAccounts = new ListBuffer[Account]()
 
   def getDetails(): Unit = {
-    println(firstName + " " + lastName + " " + "sortcode: " +sortCode )
+    println("First name: " + firstName + "\nLast name: " + lastName +
+            "\nSort Code: " +sortCode + "\nPost Code: " + postCode)
   }
 
+  def getFullName(): Unit = {
+    firstName
+  }
   def getPostCode(): String = {
     postCode
   }
 
- /* def createAccount(): Unit = {
-    var newAccount = new Account
-  }*/
+  def createAccount(userIndex: Int): Unit = {
+    var newAccount = new Account(userIndex)
+    mapOfAccounts(userIndex) = newAccount
+  }
 
 
 
