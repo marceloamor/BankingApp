@@ -1,0 +1,5 @@
+package bankingApp
+
+class CheckingAccount {
+
+}
