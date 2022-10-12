@@ -24,9 +24,7 @@ object BankingApp {
         var option = readInt()
         option match {
           case 1 => bank.createCustomer() //create a customer
-          case 2 => {
-            logInPage()
-          }
+          case 2 => logInPage()
           case 3 => bank.getCustomers()
           case 10 => //exit
         }
@@ -48,18 +46,22 @@ object BankingApp {
     def userPage(userIndex: Int): Unit = {
       var user = bank.listOfCustomer(userIndex)
       while (option != "10") {
-        println("YOU MADE IT HERE\n"+
-                "your sortcode is: " + user.sortCode + user.getPostCode())
+        println("What would you like to do?\n" +
+          "1- See details\n" +
+          "2- Create account\n" +
+          "3- See accounts\n" +
+          "4- Get support\n" +
+          "10- Log Out\n" +
+          "Enter option: ")
         var option = readInt()
+        option match {
+          case 1 => user.getDetails()
+          case 2 => //user.createAccount()
+          case 3 => //user.createAccount()
+          case 4 => println("All staff busy at the moment, try again later")
+          case 10 => start()
 
-
-
-        /*option match {
-          case 1 => bank.createCustomer() //create a customer
-          case 2 => if (!bank.logIn) {}
-          case 3 => bank.getCustomers()
-          case 10 => //exit
-        }*/
+        }
       }
     }
   }

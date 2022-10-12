@@ -19,6 +19,7 @@ class Account(firstName: String, lastName: String, sortCode: Int){
             s"Sort Code: ${sortCode}\n" +
             s"Account Number: $accountNumber")
   }
+
   // withdraw money function
   def withdrawMoney(): Unit = {
     var validNumber: Boolean = false
