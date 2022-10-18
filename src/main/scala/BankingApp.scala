@@ -61,20 +61,14 @@ object BankingApp {
         var option = readInt()
         option match {
           case 1 => user.getDetails()
-          case 2 => //createAccount()
-          case 3 => //user.createAccount()
+          case 2 => user.createAccount(userIndex)
+          case 3 => user.showAccounts()
           case 4 => println("All staff busy at the moment, try again later")
           case 10 => start()
-
-
 
         }
       }
     }
-
-
-
-
 
   }
 }

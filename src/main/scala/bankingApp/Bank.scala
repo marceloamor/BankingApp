@@ -7,7 +7,6 @@ class Bank {
 
   var listOfCustomer = new ListBuffer[Customer]()
   var listOfUniqueIDs = new ListBuffer[String]()
-  //var mapOfAccounts = Map[Int, Account]
 
 
   def createCustomer(): Unit = {
@@ -17,7 +16,7 @@ class Bank {
     val lastName = readLine
     println("What is your postcode? No spaces")
     val postCode = readLine
-    var newCustomer = new Customer(firstName, lastName, postCode)
+    val newCustomer = new Customer(firstName, lastName, postCode)
     val uniqueID = postCode + newCustomer.sortCode
     println("Below are your details. Please write them down\n" + newCustomer.getDetails)
     listOfCustomer += newCustomer
@@ -31,10 +30,10 @@ class Bank {
     }
   }
 
-  def logIn(postCode: String): Boolean = {
+  def logIn(uniqueID: String): Boolean = {
     var validUser: Boolean = false
     for (a <- listOfUniqueIDs){
-      if (a == postCode){
+      if (a == uniqueID){
         validUser = true
       }
     }

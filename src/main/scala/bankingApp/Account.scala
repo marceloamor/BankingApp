@@ -8,7 +8,7 @@ import scala.util.Random
 class Account(userIndex: Int){
 
   var balance: Double = 1000
-  private val accountNumber: Int = Random.between(10000000,99999999)
+  val accountNumber: Int = Random.between(10000000,99999999)
 
   def checkBalance(): Unit = {
     println(s"Your current balance is: £$balance")

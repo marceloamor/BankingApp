@@ -4,8 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11eee323-5e3c-4a35-9574-d41abab5c294" name="Changes" comment="third commit, added user functionality">
+    <list default="true" id="11eee323-5e3c-4a35-9574-d41abab5c294" name="Changes" comment="4th commit, fucked some things up, but added lots of good logic">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalactic_scalactic_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_compatible_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_core_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_diagrams_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_featurespec_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_flatspec_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_freespec_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_funspec_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_funsuite_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_matchers_core_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_mustmatchers_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_propspec_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_refspec_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_shouldmatchers_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_wordspec_2_13_3_2_14_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/bankTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/BankingApp1-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BankingApp1-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/BankingApp1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BankingApp1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/BankingApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/BankingApp.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/Account.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/Account.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/Bank.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/Bank.scala" afterDir="false" />
@@ -46,31 +66,83 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.BankingApp">
-    <configuration name="BankingApp" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="BankingApp" />
+  <component name="RunManager" selected="ScalaTest.bankTest.check login functionality works with real user">
+    <configuration name="bankTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="BankingApp1" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="testClassPath" value="bankTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="bankingApp.test" />
+    <configuration name="bankTest.check create customers and adding to list works" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="BankingApp1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bankingApp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="bankTest" />
+      <option name="testName" value="check create customers and adding to list works" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bankTest.check login functionality works with real user" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="BankingApp1" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="bankTest" />
+      <option name="testName" value="check login functionality works with real user" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bankTest.check login functionality works" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="BankingApp1" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="bankTest" />
+      <option name="testName" value="check login functionality works" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bankTest.ensure class Bank is created smoothly" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="BankingApp1" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="bankTest" />
+      <option name="testName" value="ensure class Bank is created smoothly" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BankingApp" />
-        <item itemvalue="Application.test" />
+        <item itemvalue="ScalaTest.bankTest.check login functionality works with real user" />
+        <item itemvalue="ScalaTest.bankTest.check create customers and adding to list works" />
+        <item itemvalue="ScalaTest.bankTest.check login functionality works" />
+        <item itemvalue="ScalaTest.bankTest.ensure class Bank is created smoothly" />
+        <item itemvalue="ScalaTest.bankTest" />
       </list>
     </recent_temporary>
   </component>
@@ -97,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665598710179</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="4th commit, fucked some things up, but added lots of good logic">
+      <created>1665607042741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665607042741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +193,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit, added login functionality" />
     <MESSAGE value="third commit, added user functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="third commit, added user functionality" />
+    <MESSAGE value="4th commit, fucked some things up, but added lots of good logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="4th commit, fucked some things up, but added lots of good logic" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
