@@ -1,11 +1,11 @@
-package bankingApp
+package bankingAppOld
 
 import scala.collection.mutable.ListBuffer
 import scala.io.StdIn.{readInt, readLine}
 
-class Bank {
+class BankOld {
 
-  var listOfCustomer = new ListBuffer[Customer]()
+  var listOfCustomer = new ListBuffer[CustomerOld]()
   var listOfUniqueIDs = new ListBuffer[String]()
 
 
@@ -16,7 +16,7 @@ class Bank {
     val lastName = readLine
     println("What is your postcode? No spaces")
     val postCode = readLine
-    val newCustomer = new Customer(firstName, lastName, postCode)
+    val newCustomer = new CustomerOld(firstName, lastName, postCode)
     val uniqueID = postCode + newCustomer.sortCode
     println("Below are your details. Please write them down\n" + newCustomer.getDetails)
     listOfCustomer += newCustomer

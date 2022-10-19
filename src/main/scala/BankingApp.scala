@@ -2,15 +2,15 @@
 
 
 // Scala program for Banking System
-import bankingApp.{Account, Bank}
+import bankingAppOld.{AccountOld, BankOld}
 
 import scala.collection.mutable.{ListBuffer, Map}
 import scala.io.StdIn.{readInt, readLine}
 import scala.util.control.Breaks.break
 
-object BankingApp {
+object BankingAppOld {
   def main(args: Array[String]): Unit = {
-    var bank = new Bank
+    var bank = new BankOld
     var option: String = ""
     println("Hello! Welcome to the Royal Wiley Bank!")
     start()

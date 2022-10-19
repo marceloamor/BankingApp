@@ -1,9 +1,9 @@
-package bankingApp
+package bankingAppOld
 
 import scala.io.StdIn.readInt
 
 
 // Child class of class Account()
-/*class CheckingAccount extends Account {
+/*class SavingsAccount extends Account {
 
 }*/
