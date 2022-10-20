@@ -4,19 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11eee323-5e3c-4a35-9574-d41abab5c294" name="Changes" comment="4th commit, fucked some things up, but added lots of good logic">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Bank.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/checkingsAccount.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/savingsAccount.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/bankingAppOld/AccountOld.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/bankingAppOld/CustomerOld.scala" afterDir="false" />
+    <list default="true" id="11eee323-5e3c-4a35-9574-d41abab5c294" name="Changes" comment="refactored all the code, lots of new functionality, it works now">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__joda_time_joda_time_2_12_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/loginHistory.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/accountTest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/customerTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/BankingApp1-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BankingApp1-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/BankingApp1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/BankingApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/BankingApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/BankingApp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Bank.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Bank.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/BankingApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/deprecatedBank/BankingApp.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/Account.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/Account.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/Bank.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingAppOld/BankOld.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/CheckingAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingAppOld/CheckingAccount.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/Customer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/Customer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/SavingsAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingAppOld/SavingsAccount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/checkingsAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/checkingsAccount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingApp/savingsAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/bankingApp/savingsAccount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingAppOld/AccountOld.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/deprecatedBank/AccountOld.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingAppOld/BankOld.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/deprecatedBank/BankOld.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingAppOld/CheckingAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/deprecatedBank/CheckingAccount.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingAppOld/CustomerOld.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/deprecatedBank/CustomerOld.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/bankingAppOld/SavingsAccount.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/deprecatedBank/SavingsAccount.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/bankTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/bankTest.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,25 +60,68 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
+    ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\44799\IdeaProjects\BankingApp1\src\main\scala\bankingApp" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.BankingApp">
-    <configuration name="Bank" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Bank" />
-      <module name="BankingApp1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BankingApp" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="BankingApp" />
-      <module name="BankingApp1" />
+      <module name="BankingApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="bankTest.check create customers and adding to list works" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="BankingApp1" />
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="BankingApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BankingApp" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="accountTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="BankingApp" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Class" />
+      <option name="testClassPath" value="accountTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="accountTest.test checkings account creation" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="BankingApp" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="testKind" value="Test name" />
+      <option name="testClassPath" value="accountTest" />
+      <option name="testName" value="test checkings account creation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="bankTest.test admin functionality" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="BankingApp" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
@@ -78,35 +129,21 @@
       </option>
       <option name="testKind" value="Test name" />
       <option name="testClassPath" value="bankTest" />
-      <option name="testName" value="check create customers and adding to list works" />
+      <option name="testName" value="test admin functionality" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="bankTest.check login functionality works with real user" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="BankingApp1" />
+    <configuration name="customerTest.ensure new customer class is created and uniqueID functionality works" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="BankingApp" />
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
       <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="bankTest" />
-      <option name="testName" value="check login functionality works with real user" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="bankTest.check login functionality works" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="BankingApp1" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Test name" />
-      <option name="testClassPath" value="bankTest" />
-      <option name="testName" value="check login functionality works" />
+      <option name="testClassPath" value="customerTest" />
+      <option name="testName" value="ensure new customer class is created and uniqueID functionality works" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,10 +151,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.BankingApp" />
-        <item itemvalue="Application.Bank" />
-        <item itemvalue="ScalaTest.bankTest.check login functionality works with real user" />
-        <item itemvalue="ScalaTest.bankTest.check create customers and adding to list works" />
-        <item itemvalue="ScalaTest.bankTest.check login functionality works" />
+        <item itemvalue="ScalaTest.bankTest.test admin functionality" />
+        <item itemvalue="ScalaTest.accountTest" />
+        <item itemvalue="ScalaTest.accountTest.test checkings account creation" />
+        <item itemvalue="ScalaTest.customerTest.ensure new customer class is created and uniqueID functionality works" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665607042741</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactored all the code, lots of new functionality, it works now">
+      <created>1666217631267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666217631267</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,7 +213,8 @@
     <MESSAGE value="second commit, added login functionality" />
     <MESSAGE value="third commit, added user functionality" />
     <MESSAGE value="4th commit, fucked some things up, but added lots of good logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="4th commit, fucked some things up, but added lots of good logic" />
+    <MESSAGE value="refactored all the code, lots of new functionality, it works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored all the code, lots of new functionality, it works now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

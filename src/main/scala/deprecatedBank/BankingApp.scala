@@ -1,10 +1,9 @@
+package deprecatedBank
+
 
 
 
 // Scala program for Banking System
-import bankingAppOld.{AccountOld, BankOld}
-
-import scala.collection.mutable.{ListBuffer, Map}
 import scala.io.StdIn.{readInt, readLine}
 import scala.util.control.Breaks.break
 

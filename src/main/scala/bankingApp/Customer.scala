@@ -2,6 +2,7 @@ package bankingApp
 
 import scala.collection.mutable.ListBuffer
 import scala.io.StdIn.{readInt, readLine}
+import scala.util.control.Breaks.break
 
 
 class Customer(fName:String, pCode:String, newID: Int) {
@@ -9,7 +10,7 @@ class Customer(fName:String, pCode:String, newID: Int) {
   var fullName: String = fName
   var postCode: String = pCode
   final val ID = newID
-  private var uniqueID = postCode.toString + ID.toString
+  private var uniqueID = postCode + ID.toString
 
   var listOfAccounts: ListBuffer[Account] = ListBuffer() //could be a set, but for the assignment using different collections
 
@@ -32,22 +33,24 @@ class Customer(fName:String, pCode:String, newID: Int) {
         case 2 => updateDetails()
         case 3 => seeAccounts()
         case 4 => createAccount()
-        case 5 => //access an account)
-        case 6 => //get support
-        case _ => println("Option Invalid")
+        case 5 => accessAccount()
+        case 6 => getSupport()
         case 10 => println("Logging out")
+        case _ => println("Option Invalid")
       }
     }
   }
 
   def getUniqueID(): String = uniqueID
 
+  //function returns a user's formatted details
   def showDetails(): Unit = {
     println("____________________________________________")
     println("|  Full Name:  " + fullName + "\n|  Post Code:  " + postCode + "\n|  ID Number:  " + ID)
     println("|____________________________________________")
   }
 
+  //allows the user to update their name or postcode
   def updateDetails(): Unit = {
     var option = 0
     while (option != 10) {
@@ -66,21 +69,23 @@ class Customer(fName:String, pCode:String, newID: Int) {
     }
   }
 
+  //function called by updateDetails, deals with the name
   def updateName(): Unit = {
     println("What would you like to change your name to? First and Last:")
     var newName = readLine()
     fullName = newName.capitalize
     println("Name successfully changed, thank you " +fullName )
   }
+  //function called by updateDetails, deals with the postcode
   def updatePostcode(): Unit = {
     println("What would you like to change your postcode to?")
     var newPostcode = readLine()
     postCode = newPostcode.toUpperCase
-    println("Postcode successfully changed, thank you " + postCode )
+    println("Postcode successfully changed, thank you ")
 
   }
 
-
+  //creates a new account of type checkings or savings with user input
   def createAccount(): Unit = {
     var option = 0
     println("What type of account would you like to open? \n1- Checking Account \n2- Savings Account\n10- Go Back\nYour Choice: ")
@@ -93,28 +98,50 @@ class Customer(fName:String, pCode:String, newID: Int) {
     }
   }
 
-  def createCheckingAccount: Unit = {
+  //creates a checking account, allocates an account ID,
+  // adds it to a customers list of accounts, and allows for initial deposit
+  def createCheckingAccount():Unit = {
     val checkingsAccount = new checkingsAccount(listOfAccounts.size+1)
     listOfAccounts += checkingsAccount
+    checkingsAccount.depositFunds()
 
   }
-  def createSavingsAccount: Unit = {
 
-    val savingsAccount = new savingsAccount(listOfAccounts.size)
+  //creates a savings account, allocates an account ID,
+  // adds it to a customers list of accounts, and allows for initial deposit
+  def createSavingsAccount(): Unit = {
+    val savingsAccount = new savingsAccount(listOfAccounts.size+1)
     listOfAccounts += savingsAccount
+    savingsAccount.depositFunds()
   }
 
+  //allows user to see all their current accounts and details, and tells them how many accounts they have
   def seeAccounts(): Unit = {
+    if (listOfAccounts.isEmpty){println("You currently have 0 accounts with us.")}
+    else {println(s"You currently have ${listOfAccounts.size} accounts with us")}
     for (acc <- listOfAccounts){
       acc.getAccountDetails()
     }
   }
 
-  //def accessAccount()
+  //function that gives the appearance of an existing customer service branch
+  def getSupport(): Unit = {
+    println("Please hold while we connect you to a customer service representative.")
+    Thread.sleep(1000)
+    println(".")
+    Thread.sleep(1000)
+    println(".")
+    Thread.sleep(1000)
+    println(".")
+    Thread.sleep(1000)
+    println("All staff busy at the moment, please try again later")
+  }
 
-  //send and receive money????? eh i think this goes in accounts instead of being in Customer
-
-  var newAccount = new savingsAccount(1)
-  newAccount.getClass
+  //allows the user to select a specific account and access its start menu
+  def accessAccount(): Unit = {
+    println("What is the ID of the account would you like to access?")
+    val account = readInt()
+    for (acc <- listOfAccounts){if (acc.accID == account) acc.start()}
+  }
 
 }

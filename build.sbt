@@ -16,6 +16,9 @@ val flatSpec = "org.scalatest" %% "scalatest-flatspec" % "3.2.14" % Test
 val funSpec="org.scalatest" %% "scalatest-funspec" % "3.2.14" % Test
 val wordSpec="org.scalatest" %% "scalatest-wordspec" % "3.2.14" % Test
 val freeSpec = "org.scalatest" %% "scalatest-freespec" % "3.2.14" % Test
+val jodaTime = "joda-time" % "joda-time" % "2.12.0"
+val jodaMoney = "org.joda" % "joda-money" % "1.0.2" % "runtime"
 
 
-libraryDependencies ++=Seq(scalaLogging, utilControl, reflect, xml, scalaTest, flatSpec, funSpec, wordSpec, freeSpec)
+libraryDependencies ++=Seq(scalaLogging, utilControl, reflect, xml, scalaTest, flatSpec,
+  funSpec, wordSpec, freeSpec, jodaTime, jodaMoney)

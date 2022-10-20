@@ -1,4 +1,4 @@
-package bankingAppOld
+package deprecatedBank
 
 import scala.collection.mutable.ListBuffer
 import scala.io.StdIn.readInt

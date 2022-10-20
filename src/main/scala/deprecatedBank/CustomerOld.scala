@@ -1,4 +1,4 @@
-package bankingAppOld
+package deprecatedBank
 
 import scala.collection.mutable
 import scala.collection.mutable.{HashMap, ListBuffer}
