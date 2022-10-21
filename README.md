@@ -1,6 +1,6 @@
 # BankingApp1
 
-This is a Scala-based command-line banking app
+This is a Scala-based command-line banking app, run from the Bank class within BankingApp file.
 
 With the following functionality
 1) Create customer function 
