@@ -35,7 +35,7 @@ class Customer(fName:String, pCode:String, newID: Int) {
         case 4 => createAccount()
         case 5 => accessAccount()
         case 6 => getSupport()
-        case 10 => println("Logging out")
+        case 10 => println("Logging out");Thread.sleep(1000);println(".");Thread.sleep(1000);println(".")
         case _ => println("Option Invalid")
       }
     }
@@ -117,11 +117,13 @@ class Customer(fName:String, pCode:String, newID: Int) {
 
   //allows user to see all their current accounts and details, and tells them how many accounts they have
   def seeAccounts(): Unit = {
+    println("----------------------------------------")
     if (listOfAccounts.isEmpty){println("You currently have 0 accounts with us.")}
     else {println(s"You currently have ${listOfAccounts.size} accounts with us")}
     for (acc <- listOfAccounts){
       acc.getAccountDetails()
     }
+    println("----------------------------------------")
   }
 
   //function that gives the appearance of an existing customer service branch
@@ -134,7 +136,10 @@ class Customer(fName:String, pCode:String, newID: Int) {
     Thread.sleep(1000)
     println(".")
     Thread.sleep(1000)
+    println("-----------------------------------------------------")
     println("All staff busy at the moment, please try again later")
+    println("-----------------------------------------------------")
+
   }
 
   //allows the user to select a specific account and access its start menu

@@ -6,7 +6,7 @@ import scala.io.StdIn.{readInt, readLine}
 
 object BankingApp {
   def main(args: Array[String]): Unit = {
-    var newBank = new Bank //create instance of Bank upon startup and present the start menu
+    val newBank = new Bank //create instance of Bank upon startup and present the start menu
     newBank.start()
   }
 }
@@ -27,6 +27,7 @@ class Bank {
         "1- Create a new customer\n" +
         "2- Log in as existing customer\n" +
         "3- Log in as Admin\n" +
+        "10- Exit (X)\n" +
         "Enter option: ")
       try {
         option = readInt()
@@ -71,15 +72,15 @@ class Bank {
 
     println("Please wait while we log you in")
     pauseForEffect(3) //Thread.sleep function for show
-
+    if(uniqueID == "123456780"){
+      println("Successful Admin Login!")
+      isLoggedIn = true
+      adminStart()
+    }
     for (customer <- listOfCustomers){
-      if(customer.getUniqueID() == "123456780"){ //lets admin log in from normal login too
-        println("Successful Admin Login!")
-        isLoggedIn = true
-        adminStart()
-      }else if(customer.getUniqueID() == uniqueID){ //checks if a customer's unique ID exists and logs them in
+      if(customer.getUniqueID() == uniqueID){ //checks if a customer's unique ID exists and logs them in
         createLoginHistory(customer)
-        println("Successful Login! ")
+        println("Successful Login! \n-------------------------------------------")
         isLoggedIn = true
         customer.start()
       }
@@ -95,13 +96,12 @@ class Bank {
     println("What is the Admin postcode/password? ")
     var adminPostCode = readLine()
     val uniqueID = adminPostCode + adminID.toString
-    if (uniqueID == "123456780"){println("Successful Admin Login");adminStart()}
+    if (uniqueID == "123456780"){println("Successful Admin Login\n");adminStart()}
     else{println("Invalid Admin Login")}
   }
 
   //admin start page
   def adminStart(): Unit = {
-    //admin start page
     var option = 0
     while (option != 10) {
       println("Which Admin function would you like to use?\n" +
@@ -129,9 +129,9 @@ class Bank {
     println("Find customer by: \n1- Full Name\n2- Post Code\n3- ID\n10- Go Back\nYour Choice: ")
     option = readInt()
     option match {
-      case 1 => searchCustomerByID()
+      case 1 => searchCustomerByName()
       case 2 => searchCustomerByPostcode()
-      case 3 => searchCustomerByName()
+      case 3 => searchCustomerByID()
       case 10 => option = 10
       case _ => println("Option Invalid")
     }
@@ -140,15 +140,15 @@ class Bank {
   def searchCustomerByPostcode(): Unit = {
     var counter = 0
     println("What is the Postcode you are searching in? ")
-    var postcode = readLine()
+    var postcode = readLine().toUpperCase()
     for (customer <- listOfCustomers){
       if (customer.postCode == postcode){
         customer.showDetails()
         counter += 1
       }
     }
-    if (counter == 0)println("No customers found in that Postcode")
-    else println(counter + " customers found in that Postcode")
+    if (counter == 0)println("No customers found in that Postcode\n---------------------------------")
+    else println(counter + " customers found in that Postcode\n----------------------------------")
   }
 
   def searchCustomerByName(): Unit = {
@@ -194,3 +194,5 @@ class Bank {
         s"${customer.fullName} logged in at $dt. \nCustomer ID: ${customer.ID} \nPostcode: ${customer.postCode}\n")
   }
 }
+
+

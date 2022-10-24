@@ -11,6 +11,7 @@ abstract class Account {  //abstract class representing possible account types
   def start(): Unit = {
     var option = 0
     while (option != 10) {
+      println("----------------------------------------")
       println(s"Welcome to your ${getClass.getSimpleName.toString.capitalize} ")
       println("What would you like to do?\n" +
         "1- See my account details \n" +
@@ -31,7 +32,7 @@ abstract class Account {  //abstract class representing possible account types
 
   //returns the account details, used within an account and within customer class to see all accounts
   def getAccountDetails(): Unit = {
-    println(s"Your details are:\nAccount ID: $accID with balance: $balance")
+    println(f"Your details are:\nAccount ID: $accID with balance: $balance%1.2f")
     println("--------------------------------------")
   }
 
@@ -40,7 +41,10 @@ abstract class Account {  //abstract class representing possible account types
     println(f"Your current balance is $balance%1.2f. How much would you like to deposit? ")
     var deposit: Double = readDouble()
     balance += deposit
+    println("----------------------------------------")
     println(f"Deposit Successful. Your balance is now $balance%1.2f")
+    println("----------------------------------------")
+
   }
 
   //simple withdraw funds function, verifying sufficient funds are available
@@ -50,7 +54,9 @@ abstract class Account {  //abstract class representing possible account types
     if (withdrawal > balance)println("Insufficient Funds")
     else{
       balance -= withdrawal
+      println("----------------------------------------")
       println(f"Withdrawal Successful. Your balance is now $balance%1.2f")
+      println("----------------------------------------")
     }
   }
 }
